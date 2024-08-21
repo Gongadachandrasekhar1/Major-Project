@@ -6,7 +6,7 @@ const listingSchema = new Schema({
     type: String,
     required: true,
   },
-  description: String,
+  description: { type: String, maxLength: 255 },
   Image: {
     type: String,
     default: "https://unsplash.com/photos/foggy-mountain-summit-1Z2niiBPg5A ",

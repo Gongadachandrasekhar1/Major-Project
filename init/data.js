@@ -188,6 +188,7 @@ const sampleListing = [
     location: "Cleveland",
     country: "USA",
   },
+  T,
 ];
 
 module.exports = { data: sampleListing };
