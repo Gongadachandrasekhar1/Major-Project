@@ -32,6 +32,11 @@ app.get("/listings", async (req, res) => {
   res.render("./listings/index.ejs", { allListings });
 });
 
+//New Route
+app.get("/listings/new", async (req, res) => {
+  res.render("./listings/new.ejs");
+});
+
 // show route
 app.get("/listings/:id", async (req, res) => {
   let { id } = req.params;
@@ -45,6 +50,13 @@ app.get("/listings/:id", async (req, res) => {
     console.error(err);
     res.status(500).send("Server Error");
   }
+});
+
+// create route
+app.post("/listings/", async (req, res) => {
+  const newListing = new Listing(req.body.Listing);
+  await newListing.save();
+  res.redirect("/listings");
 });
 
 // testing route --
