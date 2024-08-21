@@ -7,12 +7,13 @@ const listingSchema = new Schema({
     required: true,
   },
   description: { type: String, maxLength: 255 },
-  Image: {
+  image: {
     type: String,
-    default: "https://unsplash.com/photos/foggy-mountain-summit-1Z2niiBPg5A ",
+    default:
+      "https://unsplash.com/photos/round-grey-moon-chair-with-brown-pillow-on-top-JaXs8Tk5Iww",
     set: (v) =>
       v === ""
-        ? "https://unsplash.com/photos/foggy-mountain-summit-1Z2niiBPg5A "
+        ? "https://unsplash.com/photos/round-grey-moon-chair-with-brown-pillow-on-top-JaXs8Tk5Iww"
         : v,
   },
   price: Number,
